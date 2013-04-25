@@ -28,11 +28,11 @@
                 <li>
                     <label for="ddlConstituency">Which electorate was the leaflet delivered to?</label>
                     {if $constituencies_hints}
-                        <ol {if $warn_ddlConstituency}class="error"{/if}>
+                        <ul {if $warn_ddlConstituency}class="error"{/if}>
                           {foreach from="$constituencies_hints" item="name"}
-                          <li><input type="radio" name="ddlConstituencyHint" value="{$name}" {if $data.ddlConstituency == $name}selected="selected"{/if}>{$name}</li>
+                          <li><input type="radio" name="ddlConstituencyHint" value="{$name}" id="{$name}"{if $data.ddlConstituency == $name}selected="selected"{/if}><label for="{$name}">{$name}</label></li>
                           {/foreach}
-                        </ol>
+                        </ul>
                     {else}
                     <select id="ddlConstituency" name="ddlConstituency" {if $warn_ddlConstituency}class="error"{/if}>
                         <option></option>
@@ -108,7 +108,7 @@
                     <label for="txtTags">Tags this leaflet (candidate name, town, policy name, etc)</label>
                     <textarea type="text" id="txtTags" name="txtTags" {if $warn_txtTags}class="error"{/if} cols="70" rows="3">{$data.txtTags}</textarea>
                     <br/>
-                    <small>e.g. infrastructure<span class="huge">,</span> Moore Park<span class="huge">,</span> John Alexander<span class="huge">,</span> Work Choices<span class="huge">,</span> mining</small>
+                    <small>e.g. infrastructure<span class="huge">,</span> Rooty Hill<span class="huge">,</span> Bob Katter<span class="huge">,</span> Carbon Tax<span class="huge">,</span> Gonski</small>
                 </li>
                 <li>
                     <label for="txtName">Enter your name and email address *</label>
